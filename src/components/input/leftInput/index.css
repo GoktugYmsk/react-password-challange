@@ -1,0 +1,13 @@
+.leftInput {
+    display: flex;
+    width: 400px;
+    position: relative;
+    right: 100px;
+}
+
+@media screen and (max-width: 540px) {
+    .leftInput {
+        width: 300px;
+        margin-left: 200px;
+    }
+}

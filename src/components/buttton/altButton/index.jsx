@@ -1,21 +1,24 @@
 import React from 'react';
+
 import Button from 'react-bootstrap/Button';
 
-function AltButton({ showPassword, setShowPassword }) {
-    const decreaseAsciiNumbers = () => {
-        const passwordAsInteger = parseInt(showPassword, 10);
-        if (!isNaN(passwordAsInteger)) {
-            const modifiedInteger = passwordAsInteger - 5;
-            setShowPassword(modifiedInteger.toString());
-        }
+import './index.css'
+
+function AltButton({ leftInput, setRightInput }) {
+
+    const handleLowerButton = () => {
+        const updatedText = [...leftInput].map((char) => {
+            const asciiCode = char.charCodeAt(0) - 5;
+            return asciiCode.toString();
+        });
+        setRightInput(updatedText.join(' '));
     };
 
     return (
         <div>
-            <Button onClick={decreaseAsciiNumbers}>Şifreyi çöz</Button>
+            <Button className='altButton' onClick={handleLowerButton}>Şifreyi çöz</Button>
         </div>
     );
 }
-
 
 export default AltButton;

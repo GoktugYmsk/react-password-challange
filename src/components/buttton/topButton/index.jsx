@@ -2,26 +2,23 @@ import React from 'react'
 
 import Button from 'react-bootstrap/Button';
 
-function TopButton({password,setShowPassword}) {
+import './index.css'
 
+function TopButton({ leftInput, setRightInput }) {
 
-    const increaseAsciiNumbers = () => {
-        const modifiedPassword = Array.from(password).map((char) => {
-            const ascii = char.charCodeAt(0);
-            const modifiedAscii = ascii + 5;
-            setShowPassword(modifiedAscii)
-            return String.fromCharCode(modifiedAscii);
-        });
+  const handleUpperButton = () => {
+    const updatedText = [...leftInput].map((char) => {
+      const asciiCode = char.charCodeAt(0) + 5;
+      return asciiCode.toString();
+    });
+    setRightInput(updatedText.join(' '));
+  };
 
-        const modifiedPasswordString = modifiedPassword.join('');
-        console.log(modifiedPasswordString);
-    };
-
-    return (
-        <div>
-            <Button onClick={increaseAsciiNumbers}>Şifrele</Button>
-        </div>
-    )
+  return (
+    <div  >
+      <Button className='topButton' onClick={handleUpperButton} >Şifrele</Button>
+    </div>
+  )
 }
 
 export default TopButton

@@ -11,21 +11,21 @@ import AltButton from './components/buttton/altButton';
 import './App.css'
 
 function App() {
-  const [password, setPassword] = useState('');
-  const [showPassword, setShowPassword] = useState('')
+  const [leftInput, setLeftInput] = useState('');
+  const [rightInput, setRightInput] = useState('');
 
   return (
     <div className="App">
       <Row>
-        <Col lg={4}>
-          <LeftInput setPassword={setPassword} showPassword={showPassword} />
+        <Col sm={4} md={4} lg={4}>
+          <LeftInput leftInput={leftInput} setLeftInput={setLeftInput} />
         </Col>
-        <Col lg={4}>
-          <TopButton password={password} setShowPassword={setShowPassword} />
-          <AltButton setShowPassword={setShowPassword} password={password} showPassword={showPassword} />
+        <Col sm={4} md={4} lg={4}>
+          <TopButton leftInput={leftInput} setRightInput={setRightInput} />
+          <AltButton leftInput={leftInput} setRightInput={setRightInput} />
         </Col>
-        <Col lg={4}>
-          <RightInput showPassword={showPassword} />
+        <Col sm={4} md={4} lg={4}>
+          <RightInput rightInput={rightInput} />
         </Col>
       </Row>
     </div >
@@ -33,3 +33,4 @@ function App() {
 }
 
 export default App;
+

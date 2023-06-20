@@ -1,0 +1,10 @@
+.altButton {
+    width: 200px;
+    margin-top: 20px;
+}
+
+@media screen and (max-width: 540px) {
+    .altButton{
+        margin-left: 150px;
+    }
+}
